@@ -40,7 +40,7 @@
 
    ---
 
-#1 ssh建立连接
+# 1 ssh建立连接
      ×安装git命令   sudo apt-get install git 
 	   *在linux终端使用命令生成ssh key
 	      ssh-keygen -t rsa -C [github邮箱]
@@ -48,13 +48,13 @@
 			  *ssh -T git@github.com 测试是否可以与github进行通信
 
 # 2 本地上传文件到github:
-			   × 进入要上传文件的目录，初始化为git仓库  git init
-			    × 创建本地仓库 git remote add origin git@github.com:[github用户名]/[github仓库].git
-				   其中：origin是远程仓库默认的用户名，可以在.git/config中进行修改
-				    * touch readme.txt
-					 * vim readme.txt  输入需要的内容
-					  × git add readme.txt
-					   * git commit -m "提交注释" 
+	× 进入要上传文件的目录，初始化为git仓库  git init
+	× 创建本地仓库 git remote add origin git@github.com:[github用户名]/[github仓库].git
+	   其中：origin是远程仓库默认的用户名，可以在.git/config中进行修改
+	* touch readme.txt
+	* vim readme.txt  输入需要的内容
+	× git add readme.txt
+	* git commit -m "提交注释" 
 					    * git push -u origin master
 
 # 3 修改本地文件，更新至远程仓库
