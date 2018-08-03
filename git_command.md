@@ -3,11 +3,11 @@
 	   ---
 
 ## 1 ssh建立连接
-   ×安装git命令   sudo apt-get install git 
-   *在linux终端使用命令生成ssh key
+   安装git命令   sudo apt-get install git 
+   在linux终端使用命令生成ssh key
    ssh-keygen -t rsa -C [github邮箱]
-   ×复制公钥.pub结尾的文件内容，粘贴到github网页端设置>ssh中
-   *ssh -T git@github.com 测试是否可以与github进行通信
+   复制公钥.pub结尾的文件内容，粘贴到github网页端设置>ssh中
+    ssh -T git@github.com 测试是否可以与github进行通信
 
 ## 2 本地上传文件到github:
    × 进入要上传文件的目录，初始化为git仓库  git init
