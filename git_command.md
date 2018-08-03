@@ -1,9 +1,5 @@
 # git安装及使用
-
-
-   ---
-
-# 1 ssh建立连接
+   1 ssh建立连接
    ×安装git命令   sudo apt-get install git 
    *在linux终端使用命令生成ssh key
       ssh-keygen -t rsa -C [github邮箱]
