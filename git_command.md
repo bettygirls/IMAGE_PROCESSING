@@ -41,3 +41,5 @@
      git rm xxx.txt
      git push
 
+## 6 删除远程分支
+	 git push origin --delete <分支名>
