@@ -43,3 +43,8 @@
 
 ## 6 删除远程分支
 	 git push origin --delete <分支名>
+
+## 7 git branch
+	 git branch --all  打印所有分支结构
+	 git branch -vv    打印分支名和其他信息
+	 git branch --lis  只打印分支名
