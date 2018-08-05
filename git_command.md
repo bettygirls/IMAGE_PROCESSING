@@ -1,4 +1,4 @@
-
+##
 # git安装及使用
 	   ---
 
@@ -48,3 +48,15 @@
 	 git branch --all  打印所有分支结构
 	 git branch -vv    打印分支名和其他信息
 	 git branch --lis  只打印分支名
+	 
+## 8 删除文件并commit之后，状态回退
+     HEAD 当前版本
+     HEAD^ 上一个版本
+     HEAD^^ 上上个版本
+     git reset --hard HEAD
+     git reset --hard HEAD^
+     git log
+     或者查版本号回退：
+     git reflog
+     git reset --hard 版本号
+       
