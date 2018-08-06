@@ -32,4 +32,46 @@
     gcc -x c hello.jpg
 ### -x non filename  关掉上一个选项，让gcc根据文件后缀名自动识别文件类型
     gcc -x c hello.jpg -x none hello2.c
-    
+### -c 只激活预处理，编译汇编
+    gcc -c hello.c   生成.o的obj文件
+    gcc -c test.s    将汇编输出test.s编译输出test.o文件
+### -S 只激活预处理和编译
+    gcc -S hello.c   生成.s 的汇编代码
+    gcc -S test.i   将预处理输出文件test.i汇编成test.s文件
+### -E 只激活预处理，不生成文件，可以重定向到一个输出文件查看
+    gcc -E hello.c > a.txt
+### -o 制定目标名称，缺省的时候，gcc编译出来的文件是a.out 
+
+###
+   -include file 包含某个代码，相当于在代码中使用#include<filename>
+          gcc hello.c -include /root/level.h
+   -C   在预处理的时候，不删除注释信息，一般和-E使用，有时候分析程序
+   -M   生成文件关联的信息，包含目标文件所依赖的所有源代码
+   -library 指定编译的时候使用的库
+          gcc -lcurses hell0.c
+   -Ldir  指定编译的时候，搜索库的路径，比如自己的库，可以用它指定目录，不然编译器只在标准库的目录中找
+   -g    只是编译器，在编译的时候产生调试信息
+   -ggdb 尽可能的生成gdb的可以使用的调试信息
+   -w  不产生任何警告信息
+   -Wall 生成所有警告信息
+   #### 多个源文件的编译方法
+          方法1：一起编译
+          gcc demo1.c demo2.c -o demo 
+          方法2：分别编译，一起链接
+          gcc -c demo1.c
+          gcc -c demo2.c
+          gcc -o demo1.o demo2.o -o demo
+   ### 多线程编译
+          编译时加入 -lm -lpthread参数
+　　      参数说明：
+          -lm  使用math.h中声明的库函数还有一点特殊之处，gcc命令行必须加-lm选项，因为数学函数位于libm.so库文件中（这些库文件通常位  
+          于/lib 目录下），-lm选项告诉编译器，我们程序中用到的数学函数要到这个库文件里找。
+          -lpthread lpthread是表示要连接到pthread的库是这里省略的lib，你应该可以找到共享库libpthread.so的
+  ### opencv 编译
+          gcc demo.c -o demo `pkg-config --cflags --libs opencv`
+
+          
+          
+          
+          
+
