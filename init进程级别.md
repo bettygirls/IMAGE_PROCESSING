@@ -1,4 +1,4 @@
-
+ 
 # init 是所有linux 进程的父进程，进程号为1，是内核引导运行的，是系统中的第一个进程
 -b :不执行相关脚本而直接进入单用户模式
 -s :切换到单用户模式
@@ -6,7 +6,9 @@
 查看系统进程命令 ：ps -ef | head  
 
 
-查看init的配置文件 ： more /etc/inittab  
+查看init的配置文件 ： more /etc/inittab   需要root 权限 
+-  使用 vim /etc.inittab
+- id:5:initdefault: 修改默认界面
 
 
 查看系统当前运行的级别： runlevel  
