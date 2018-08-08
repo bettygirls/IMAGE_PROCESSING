@@ -1,4 +1,4 @@
-
+  
 
 ## vector
 #### 底层结构
@@ -9,10 +9,18 @@
  
 #### 函数
 + 创建：
->>>  无参数，一个空的vector vector<int> vec;
->>>  num 和值   初始放入num 个值为val 的vector  vector<int> vec(num,val);
->>>  vector(from) 构造一个与 vector from相同的 vector
->>>  迭代器       构造一个初始值为[start, end) 的vector   vector(iterator start, iterator end);
+>>>  无参数，一个空的vector vector<int> vec;  
+ 
+ 
+>>>  num 和值   初始放入num 个值为val 的vector  vector<int> vec(num,val);  
+ 
+ 
+>>>  vector(from) 构造一个与 vector from相同的 vector  
+
+
+>>>  迭代器       构造一个初始值为[start, end) 的vector   vector(iterator start, iterator end);  
+
+
 + 运算符： == , != <= ,>= <, >,[]
 + assign 函数 ： 将区间 [start, end) 赋值到当前vector 或者赋值num个val元素到vector中，这个函数会清除为vector赋值以前的内容
 + at 函数：vec.at(i) 有越界检查
@@ -26,9 +34,15 @@
 + erase() : 要么删除指定位置的元素，要么删除区间[start, end) 所有元素，返回值是指向删除的最后的一个呀u盛怒的下一位置的迭代器
 + get_allocator : 返回当前vector 的内存分配器   ？？？？？？
 + insert ：vec.insert(iterator, num, '要插入的元素')
->>>位置loc前插入值为val的元素,返回指向这个元素的迭代器, 
->>>位置loc前插入num个值为val的元素 
->>>位置loc前插入区间[start, end)的所有元素 . 
+>>>位置loc前插入值为val的元素,返回指向这个元素的迭代器,   
+
+
+>>>位置loc前插入num个值为val的元素   
+
+
+>>>位置loc前插入区间[start, end)的所有元素 .   
+
+
 + max_size() : 返回当前vector所能容纳的元素数量的最大值（包括可重新分配内存）
 + pop_back() : 删除当前vector最末的一个元素
 + push_back() : 添加元素到当前vector末尾
