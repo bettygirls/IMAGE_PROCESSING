@@ -51,7 +51,7 @@
 + reverse(size) : 为当前vector预留至少共容纳size个元素的空间，实际空间可能大于size
 + resize(size, val) : 改变当前的vector 大小为size, 新创建的元素赋值val
 + size() : 返回当前vector所容纳元素的数目
-+ swap() : 交换当前vector 与vector(&from) 的元素
++ swap() : 交换当前vector 与vector(&from) 的元素，可以和没有元素的vec交换实现内存释放
 ```
  void swap(int & __restrict a, int & __restrict b)  //int 类型的优化， 使用异或
 {  
