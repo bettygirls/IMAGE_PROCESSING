@@ -1,4 +1,6 @@
 
+C语言库函数，头文件 <string.h>或<cstring> 
+    
 ### strcpy ,strncpy 和 memcpy函数的区别
 ```
 memcpy:
@@ -22,6 +24,7 @@ strncpy和memcpy很相似，只不过它在一个终止的空字符处停止。
 
 memcpy和memmove（）作用是一样的，唯一的区别是，当内存发生局部重叠的时候，memmove保证拷贝的结果是正确的，
 memcpy 不保证正确
+
 
 ```
 #### memcpy
@@ -87,4 +90,30 @@ void* my_memmove(void* dst, const void* src, size_t n)
     return dst;
 
 }
+```
+#### memset
+将已开辟内存空间s的首n个字节的值设为值，常用于内存的初始化  
+
+方便清空一个结构类型的变量或数组：
+```
+struct sample_struct
+{
+char csName[16];
+int iSeq;
+int iType;
+};
+
+一般情况下，清空stTest的方法：
+stTest.csName[0]='/0';
+stTest.iSeq=0;
+stTest.iType=0;
+
+用memset就非常方便：
+memset(&stTest,0,sizeof(struct sample_struct));
+```
+
+```
+void *memset(void *s,int c,size_t n)
+int c[100];
+memset(c, 0,6);
 ```
