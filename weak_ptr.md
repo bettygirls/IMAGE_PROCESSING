@@ -1,5 +1,22 @@
 
+
 #### weak_ptr
+weak_ptr 是一种不控制所指向对象生存期的智能指针，它指向一个shared_ptr 管理的对象，将一个weak_ptr 绑定到一个shared_ptr ，
+不会改变shred_ptr的引用计数，一旦最后一个指向对象的shared_ptr被销毁，对象就会被释放。
+
+创建weak_ptr时，要用一个shred_ptr 来初始化它。
+```
+auto p = make_shared<int>(42);
+weak_ptr<int>wp(p);
+wp 和 p 指向相同的对象，由于是弱共享，创建wp不会改变p的引用计数，wp指向的对象可能被释放掉。
+```
+
+访问对象的时候不能直接使用weak_ptr，要调用lock.
+```
+if(shared_ptr<int> np = wp.lock){  //如果np不为空则条件成立
+}
+只有当lock调用返回true时我们才会进入if语句体，在if中使用np访问共享对象是安全的
+```
 ```
  weak_ptr:
  weak_ptr和shared_ptr的最大区别在于weak_ptr在指向一个对象的时候不会增加其引用计数，
