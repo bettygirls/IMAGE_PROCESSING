@@ -1,4 +1,5 @@
 
+
 将一个数组划分为2个部分，保证左右部分最大值的差值最大
 
 
@@ -28,3 +29,12 @@ t[i]   arr[i.....N-1]的最大值
 最后一个数无论如何都会被划分成另一个部分，把最后一个数或者第一个数当成另一部分
 会减小这部分max增大的可能性
 
+#include<iostream>
+#include<limits.h>
+int maxabs1(int *arr, int l){
+    int MAX = INT_MIN;
+    for(int i =0; i < l; i++){
+        MAX = std::max(arr[i], arr[l -1]);
+    }
+    return MAX - std::min(arr[0], arr[l -1]);
+}
